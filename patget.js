@@ -1,11 +1,15 @@
-var divs = document.querySelectorAll( 'div[class *= "attachments"]' );
+function getURLs() {
+    var divs = document.querySelectorAll( 'div[class *= "attachments"]' );
 
-var urls = []; for ( var i = 0; i < divs.length; i++ ) {
-    var a = divs[i].getElementsByTagName( 'a' );
+    var urls = []; for ( var i = 0; i < divs.length; i++ ) {
+        var a = divs[i].getElementsByTagName( 'a' );
 
-    for ( var n = 0; n < a.length; n++ ) {
-        urls = urls.concat( [a[n].href] );
+        for ( var n = 0; n < a.length; n++ ) {
+            urls = urls.concat( [a[n].href] );
+        }
     }
+
+    return urls;
 }
 
 function downloadAll( urls ) {
@@ -16,10 +20,11 @@ function downloadAll( urls ) {
     document.body.appendChild( link );
 
     for ( var i = 0; i < urls.length; i++ ) {
-        link.setAttribute( 'href', urls[i] ); link.click();
+        link.setAttribute( 'href', urls[i] );
+        link.click();
     }
 
     document.body.removeChild( link );
 }
 
-downloadAll( urls );
+downloadAll( getURLs() );
