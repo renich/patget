@@ -15,7 +15,16 @@ Instructions
 Attach the minified version of the script (Bookmarklet) into your Firefox/Google Chrome bookmark bar and click on it while visiting
 one of your sponsee's month views.
 
+To attach it, you could:
+
+#. Create a bookmark in your bookmark bar.
+#. Add the content of `patget-min.js` into the link input area, as is.
+#. Go to your sponsee and click that link.
+
 It works everywhere at the time of publishing, but it works better on the 'by month' view.
+
+You can inspect the code in the unminified area.
+
 
 Minification
 ------------
