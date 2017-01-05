@@ -7,7 +7,7 @@ src_file="${path}/patget.js"
 dst_file="${path}/patget-min.js"
 
 # convert to bookmarklet
-cat <( echo 'javascript{' ) \
+cat <( echo 'javascript:{' ) \
     "$src_file" \
     <( echo '}; voild(0);' ) | \
     tr '\n' ' ' | \
